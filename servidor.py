@@ -60,7 +60,7 @@ def inicializar_socket():
         # Configuración de localhost y puerto 5000
         servidor.bind(("localhost", 5000))
 
-        # El servidor comienza a escuchar conexiones
+        # El servidor comienza a "escuchar" conexiones
         servidor.listen()
 
         print("Servidor escuchando en localhost:5000")
@@ -86,13 +86,13 @@ def atender_cliente(servidor):
                 # Recibe datos del cliente
                 datos = cliente.recv(1024)
 
-                # Si no recibe datos, el cliente se desconectó
+                # Si no recibe datos, el cliente se desconecta
                 if not datos:
                     break
 
                 mensaje = datos.decode("utf-8")
 
-                # Obtiene la fecha y hora actual
+                # Obtiene la fecha y hora actual del envio
                 fecha_envio = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
                 # Obtiene la IP del cliente
