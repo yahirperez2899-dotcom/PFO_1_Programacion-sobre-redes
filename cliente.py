@@ -5,7 +5,7 @@ def conectar_servidor():
     """Crea el socket y se conecta al servidor."""
 
     try:
-        # Configuración del socket TCP/IP
+        # Configuración del socket TCP/IP 
         cliente = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
         # Conexión al servidor en localhost y puerto 5000
@@ -35,7 +35,7 @@ def enviar_mensajes(cliente):
             "Escribí un mensaje (o 'exito' para salir): "
         )
 
-        # Finaliza el cliente cuando el usuario escribe "exito"
+        # Finaliza el cliente solo cuando el usuario escriba "exito"
         if mensaje.lower() == "exito":
             break
 
@@ -65,7 +65,7 @@ def main():
             enviar_mensajes(cliente)
 
         finally:
-            # Cierra la conexión con el servidor
+            # Cierra la conexión con el servidor 
             cliente.close()
             print("Conexión cerrada.")
 
